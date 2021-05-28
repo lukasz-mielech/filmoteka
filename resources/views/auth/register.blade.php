@@ -2,32 +2,30 @@
 
 @section('content')
     <div>
-        <div class="container bg-light py-4 px-5">
+        <div class="bg-light col-10 col-sm-6 col-xl-4 mx-auto px-4 py-3 rounded">
             <h3 class="mb-3">Zarejestruj się</h3>
-            <form action="{{route('register')}}" method="post" class="w-50">
+            <form class="d-flex flex-column" action="{{route('register')}}" method="post">
                 @csrf
-                <div class="">
-                    <input type="text" name="name" class="form-control mt-2 @error('name') border border-danger @enderror" id="name" placeholder="Imię Nazwisko" value="{{old('name')}}">
-                    @error('name')
+                <input class="mt-3 form-control @error('name') border border-danger @enderror" type="text" name="name" placeholder="Your name" id="name" value="{{old('name')}}">
+            @error('name')
                     <p class="text-danger mx-1 mb-0">
                         {{$message}}
                     </p>
-                    @enderror
-                    <input type="text" name="email" class="form-control mt-2  @error('email') border border-danger @enderror" id="email" placeholder="Email" value="{{old('email')}}">
-                    @error('email')
+            @enderror
+            <input class="mt-2 form-control @error('email') border border-danger @enderror" type="text" name="email" placeholder="Your email" id="email" value="{{old('email')}}">
+            @error('email')
                     <p class="text-danger mx-1 mb-0">
                         {{$message}}
                     </p>
-                    @enderror
-                    <input type="password" name="password" class="form-control mt-2  @error('password') border border-danger @enderror" id="password" placeholder="Hasło">
-                    @error('password')
+            @enderror
+            <input class="mt-2 form-control @error('password') border border-danger @enderror" type="password" name="password" placeholder="Choose password" id="password">
+            @error('password')
                     <p class="text-danger mx-1 mb-0">
                         {{$message}}
                     </p>
-                    @enderror
-                    <input type="password" name="password_confirmation" class="form-control mt-2 @error('password') border border-danger @enderror" id="password__confirmation" placeholder="Powtórz hasło">
-                    <button type="sumbmit" class="btn btn-primary mt-3">Zarejestruj</button>
-                </div>
+            @enderror
+            <input class="mt-2 form-control @error('password') border border-danger @enderror" type="password" name="password_confirmation" placeholder="Repeat password" id="password_confirmation">
+            <input class="btn btn-primary mt-3" type="submit" id="submit" value="Register">
             </form>
         </div>
     </div>

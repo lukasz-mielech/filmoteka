@@ -24,7 +24,7 @@
                         <a class="nav-link text-dark" href="{{ route('register') }}">Register</a>
                         @endguest
                         @auth
-                        <a class="nav-link text-dark" href="#">{{auth()->user() -> name}}</a>
+                        <a class="nav-link" href="{{route('update')}}">{{auth()->user()->name}}</a>
                         <form action="{{route('logout')}}" method="post" class="nav-link p-0">
                             @csrf
                             <button type="submit" class="btn btn-link text-decoration-none text-dark">Wyloguj</button>
